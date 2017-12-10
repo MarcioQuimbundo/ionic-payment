@@ -1,0 +1,53 @@
+<ion-content padding>
+
+
+  <div text-center>
+    <div>
+      <div text-center>
+        <img class="imageTick" src="assets/images/success.png"/>
+      </div>
+    </div>
+
+    <div text-center class="paymentsInfo" [hidden]="isSubscribe == true">
+      <h2>
+        <small>Ödenen Ücret:</small>
+        {{userPayment | number}} ₺
+      </h2>
+      <p class="odemeSayfasiP">Ödemeniz başarıyla tamamlandı.</p>
+    </div>
+
+    <div text-center class="paymentsInfo" [hidden]="isSubscribe == false">
+      <p class="odemeSayfasiP">Abonman çıkış başarıyla tamamlandı.</p>
+    </div>
+
+    <div [hidden]="htmlStatusValue == false">
+      <ion-grid class="gridPoll">
+        <ion-row>
+          <ion-col col-2>
+            <ion-icon name="alert" color="color1" class="largerIcon"></ion-icon>
+          </ion-col>
+          <ion-col col-10>
+            <p class="odemeSayfasiP">
+              Aldığınız hizmetin kalitesini oylamak ister misiniz?
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <rating [(ngModel)]="rate" (ngModelChange)="getRate($event)"
+              readOnly="false" max="5" emptyStarIconName="star-outline" halfStarIconName="star-half" starIconName="star"
+              nullable="true"></rating>
+    </div>
+
+    <div text-center="" [hidden]="htmlStatusValue == true">
+      <h4 class="thanks-vote-text">Oylamanız için teşekkürler!</h4>
+      <p>Değerlendirmenizi daha sonra profiliniz üzerinden yapabilirsiniz.</p>
+    </div>
+
+    <div class="container">
+      <button color="color1" block="" ion-button (click)="rotateAboutPage()">Anasayfa</button>
+      <button color="color1" block="" ion-button (click)="rotatePaymentsPage()">Ödemelerim</button>
+    </div>
+  </div>
+
+</ion-content>

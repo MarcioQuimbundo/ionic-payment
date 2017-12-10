@@ -1,0 +1,79 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>payment-details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div [hidden]="(type == 'daily')">
+    <ion-card color="color2">
+      <ion-card-content>
+        <p class="profile-infos">Abonelik Durumu: <b>{{status}}</b></p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <p class="profile-infos">Otopark: <b>{{ data.subPark}}</b></p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <p class="profile-infos">İlçe: <b>{{ data.subCity}}</b></p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <p class="profile-infos">Ödemeniz: <b>{{ data.subPayment | number}} ₺</b></p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <p class="profile-infos">Başlangıç: <b>{{ data.userSubscriptionStartTime}}</b></p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <p class="profile-infos">Bitiş: <b>{{ data.userSubscriptionEndTime}}</b></p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div [hidden]="(type == 'subs')">
+    <ion-card>
+      <ion-card-content>
+        <p class="profile-infos">Otopark: <b>{{ data.otoparkName}}</b></p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <p class="profile-infos">İlçe: <b>{{ data.subCity}}</b></p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <p class="profile-infos">Araç Tipi: <b>{{ data.carType}}</b></p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card color="color2">
+      <ion-card-content>
+        <p class="profile-infos">Ödemeniz: <b>{{ data.payment | number}} ₺</b></p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <p class="profile-infos">Giriş: <b>{{ data.loginTime}}</b></p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <p class="profile-infos">Çıkış: <b>{{ data.logoutTime}}</b></p>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button outline block [hidden]="rateIsValid == true" (click)="rotatePollPage()">Değerlendirme anketi</button>
+  </div>
+
+</ion-content>

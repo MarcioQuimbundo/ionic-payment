@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>subscribe</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div padding>
+    <p class="p-header-info">Lütfen abone olmak istediğiniz otoparkı seçiniz.</p>
+
+    <ion-item>
+      <ion-label icon-left>
+        <ion-icon name="ion-android-car"></ion-icon>
+        İlçe
+      </ion-label>
+      <ion-select [(ngModel)]="selectedCities" name="selectedCities" (ionChange)="getSelectedParks(selectedCities)">
+        <ion-option *ngFor="let city of cities" [value]="city.name">{{ city.name }}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label icon-left>
+        <ion-icon name="ion-android-car"></ion-icon>
+        Otopark
+      </ion-label>
+      <ion-select [(ngModel)]="selectedParks" name="selectedParks" (ionChange)="getSelectedSubType(selectedParks)">
+        <ion-option *ngFor="let park of parks" [value]="park.name">{{park.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label icon-left>
+        <ion-icon name="ion-android-car"></ion-icon>
+        Süre
+      </ion-label>
+      <ion-select [(ngModel)]="selectedSubTypes" name="selectedSubTypes"
+                  (ionChange)="getSelectedPayment(selectedSubTypes)">
+        <ion-option *ngFor="let type of subtypes" [value]="type.name">{{type.name}} Aylık</ion-option>
+      </ion-select>
+    </ion-item>
+  </div>
+
+  <div class="boxContainer" [hidden]="!(paymentInfoValue == true)">
+    <div class="box">
+      <ion-grid text-center>
+        <ion-row>
+          <ion-col width-33>
+            <h4 class="p-payment-info"><b>{{selectedCity}} | {{selectedPark}}</b> <br> <b>{{selectedSubType}} </b> aylık abonelik
+              ücreti <b>{{payment}}₺ </b></h4>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <div padding>
+    <ion-item text-wrap no-lines class="terms-of-service">
+      <ion-row>
+        <ion-col col-2 no-padding no-margin class="terms-of-service-tick">
+          <ion-item no-padding no-margin no-lines>
+            <ion-checkbox [(ngModel)]="agreed" (ionChange)="getAgreedConfirmation(agreed)"></ion-checkbox>
+          </ion-item>
+        </ion-col>
+        <ion-col col-10 no-padding no-margin>
+          <ion-item no-padding no-margin no-lines>
+            <a target="_blank" href="#">Abonelik Sözleşmesini</a> kabul ediyorum.
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+
+    <div class="buttons">
+      <button color="color2" ion-button col-5 (click)="saveUserSubscription()">
+        ABONE OL
+      </button>
+      <button color="color1" ion-button col-5>
+        İPTAL ET
+      </button>
+    </div>
+  </div>
+
+</ion-content>

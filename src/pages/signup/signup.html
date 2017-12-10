@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Create an Account
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
+    <ion-item>
+      <ion-label stacked>Adınız:</ion-label>
+      <ion-input formControlName="firstname" type="firstname" name="firstname" placeholder="Adınız" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Soyadınız:</ion-label>
+      <ion-input formControlName="surname" type="surname" name="surname" placeholder="Soyadınız" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input formControlName="email" type="email" placeholder="Your email address"
+                 [class.invalid]="!signupForm.controls.email.valid && signupForm.controls.email.dirty"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid  && signupForm.controls.email.dirty">
+      <p>Geçerli bir mail adresi giriniz.</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Password</ion-label>
+      <ion-input formControlName="password" type="password" placeholder="Your password"
+                 [class.invalid]="!signupForm.controls.password.valid && signupForm.controls.password.dirty"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid  && signupForm.controls.password.dirty">
+      <p>Şifreniz en az 6 karakter olmalı.</p>
+    </ion-item>
+
+    <button style="margin-top: 5%;" ion-button block type="submit">
+      Create an Account
+    </button>
+
+  </form>
+
+</ion-content>

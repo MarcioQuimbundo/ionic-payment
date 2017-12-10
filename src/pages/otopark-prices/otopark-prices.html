@@ -1,0 +1,93 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Otopark Fiyatları</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <div>
+    <ion-segment [(ngModel)]="selectedSegment">
+      <ion-segment-button value="daily">
+        Günlük Fiyat
+      </ion-segment-button>
+      <ion-segment-button value="subs">
+        Abonman Fiyat
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="selectedSegment">
+    <ion-list *ngSwitchCase="'subs'" text-center>
+      <ion-card>
+        <ion-card-content>
+          {{subType1}} Aylık: <b> {{subTypePayment1}}</b>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-content>
+          {{subType2}} Aylık: <b> {{subTypePayment2}}</b>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-content>
+          {{subType3}} Aylık: <b> {{subTypePayment3}}</b>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>
+        <ion-card-content>
+          {{subType4}} Aylık: <b> {{subTypePayment4}}</b>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'daily'" text-center>
+      <div>
+        <ion-item padding>
+          <ion-label icon-left>
+            <ion-icon name="ion-android-car"></ion-icon>
+            Araç Cinsi
+          </ion-label>
+          <ion-select [(ngModel)]="selectedType" (ionChange)="getCarType(selectedType)">
+            <ion-option value="otomobil">Otomobil</ion-option>
+            <ion-option value="kamyonet">Kamyonet</ion-option>
+            <ion-option value="minibus">Minibüs</ion-option>
+            <ion-option value="otobus">Otobüs</ion-option>
+            <ion-option value="motor">Motor</ion-option>
+          </ion-select>
+        </ion-item>
+      </div>
+      <div [hidden]="(responseBoolean == false)">
+        <ion-card>
+          <ion-card-content>
+            {{dailyType0}} - {{dailyType1}} Saat: <b> {{dailyType1Payment}} ₺</b>
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-content>
+            {{dailyType1}} - {{dailyType2}} Saat: <b> {{dailyType2Payment}} ₺</b>
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-content>
+            {{dailyType2}} - {{dailyType3}} Saat: <b> {{dailyType3Payment}} ₺</b>
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-content>
+            {{dailyType3}} - {{dailyType4}} Saat: <b> {{dailyType4Payment}} ₺</b>
+          </ion-card-content>
+        </ion-card>
+        <ion-card>
+          <ion-card-content>
+            {{dailyType4}} - {{dailyType5}} Saat: <b> {{dailyType5Payment}} ₺</b>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-list>
+  </div>
+</ion-content>

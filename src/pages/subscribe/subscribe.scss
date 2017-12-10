@@ -1,0 +1,28 @@
+page-subscribe {
+  .p-header-info {
+    text-align: center;
+    color: #2C3E50;
+  }
+  .item-checkbox .checkbox {
+    right: auto !important;
+  }
+  .buttons {
+    margin-top: -2%;
+    text-align: center;
+  }
+  .terms-of-service {
+    text-align: center;
+    margin-top: 5%;
+  }
+
+  .boxContainer {
+    display: table;
+    width: 100%;
+  }
+  .box {
+    color: white;
+    background: #FC4349;
+    text-align: center;
+    margin: auto;
+  }
+}

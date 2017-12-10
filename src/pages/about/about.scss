@@ -1,0 +1,40 @@
+page-about {
+
+  .box.scroll-content {
+    padding: 0px !important;
+  }
+
+  .boxContainer {
+    display: table;
+    width: 100%;
+    height: 30%;
+  }
+  .box {
+    background: #FC4349;
+    display: table-cell;
+    text-align: center;
+    vertical-align: bottom;
+  }
+  .walletText {
+    margin-top: -15px;
+    color: white;
+    font-size: 40px;
+  }
+  .walletButton {
+    margin-top: -5px;
+    margin-bottom: 5%;
+  }
+  .walletTextParag {
+    color: white;
+    font-size: small;
+  }
+  .odemeButtons {
+    margin-top: 13%;
+  }
+
+  .odemeUcretleriGorParagraf {
+    font-size: 12px;
+    text-align: center;
+  }
+
+}

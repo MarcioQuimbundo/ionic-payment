@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="color5">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div>
+    <ion-card>
+      <ion-card-content>
+        <p class="profile-infos">Hoşgeldiniz <b>{{userInfos.name}} {{userInfos.surname}}</b></p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <p class="profile-infos">Bakiye: <b>{{ userInfos.wallet | number}} ₺</b></p>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header class="ioncardheader">
+        Aracınız
+      </ion-card-header>
+      <ion-list (click)="rotateCarsPage()">
+        <button ion-item>
+          <ion-icon name="car" item-start></ion-icon>
+          {{userInfos.carType}} | {{userInfos.plate}}
+        </button>
+      </ion-list>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header class="ioncardheader">
+        Abonelik
+      </ion-card-header>
+      <ion-list *ngFor="let data of userSubscriptionsAsArray" (click)="selectedOtoparkDetails(data)">
+        <button ion-item>
+          <ion-icon name="home" item-start></ion-icon>
+          {{data.subPark}}
+        </button>
+      </ion-list>
+
+      <p text-center padding [hidden]="(noSubscriptionResponse == false)">Aboneliğiniz bulunmamaktadır.</p>
+
+    </ion-card>
+
+
+    <div text-center>
+      <button col-md-6 ion-button="" outline color="color1" (click)="rotateSubsPage()">ABONMAN OL</button>
+      <button col-md-6 ion-button="" outline color="color1">BAKİYE YÜKLE</button>
+    </div>
+
+
+  </div>
+
+
+</ion-content>

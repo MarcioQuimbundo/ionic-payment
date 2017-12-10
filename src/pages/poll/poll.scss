@@ -1,0 +1,33 @@
+page-poll {
+  p {
+    margin-bottom: -5%;
+  }
+
+  textarea {
+
+    width: 100% !important;
+    height: 12vh !important;
+
+    margin: auto;
+    margin-top: 40px;
+
+    border: solid 1px #FC4349;
+
+  }
+
+  .comment-textarea {
+    margin-bottom: -10%;
+  }
+  .info-span{
+    font-size: 12px;
+  }
+
+  .container {
+    position: absolute;
+    bottom: 3%;
+    margin-right: 10%;
+    margin-left: 10%;
+    left: 0px;
+    right: 0px;
+  }
+}

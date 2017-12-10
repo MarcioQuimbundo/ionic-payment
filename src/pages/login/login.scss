@@ -1,0 +1,40 @@
+page-login {
+
+  .background {
+    background-image: url("../assets/images/loginback.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .input-cover {
+  }
+
+  .scroll-content {
+    align-content: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+  }
+  h6 {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+  .buttonsfooter {
+    text-align: center;
+    margin-top: 20px;
+    color: #FC4349;
+  }
+  .buttonGroup {
+    margin-top: 20px;
+  }
+
+  a {
+    color: #FC4349;
+  }
+
+  ion-label {
+    color: #2C3E50;
+  }
+
+}

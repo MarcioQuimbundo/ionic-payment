@@ -1,0 +1,61 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>poll</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div text-center="">
+    <div>
+      <p>
+        Otopark güvenliğini değerlendiriniz.
+      </p>
+      <ion-range min="0" max="10" step="1"  color="color1" [(ngModel)]="security"
+                 (ngModelChange)="onSecurityChange($event)" required>
+        <ion-icon range-left color="color1" name="remove"></ion-icon>
+        <ion-icon range-right color="color1" name="add"></ion-icon>
+      </ion-range>
+    </div>
+
+    <div>
+      <p>
+        Otopark temizliğini değerlendiriniz.
+      </p>
+      <ion-range min="0" max="10" step="1"  color="color1" [(ngModel)]="hygiene"
+                 (ngModelChange)="onHygineChange($event)" required>
+        <ion-icon range-left color="color1" name="remove"></ion-icon>
+        <ion-icon range-right color="color1" name="add"></ion-icon>
+      </ion-range>
+    </div>
+
+    <div>
+      <p>
+        Otopark çalışanlarını değerlendiriniz.
+      </p>
+      <ion-range min="0" max="10" step="1"  color="color1" [(ngModel)]="staff"
+                 (ngModelChange)="onStaffChange($event)" required>
+        <ion-icon range-left color="color1" name="remove"></ion-icon>
+        <ion-icon range-right color="color1" name="add"></ion-icon>
+      </ion-range>
+    </div>
+
+    <div>
+      <p class="comment-textarea">
+        Eklemek istedikleriniz.
+      </p>
+      <textarea  [(ngModel)]="textArea" (ngModelChange)="onTextAreaChange($event)" name="comment" id="comment-textarea" ></textarea>
+    </div>
+
+    <div class="container">
+      <button ion-button block (click)="goToTabsPage()">Gönder</button>
+      <span class="info-span">
+        Değerlendirmenizi <b>1 çok kötü</b>, <b>10 çok iyi</b> olacak şekilde yapınız*
+      </span>
+    </div>
+
+  </div>
+
+</ion-content>

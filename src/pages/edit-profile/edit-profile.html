@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>edit-profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <form #myForm='ngForm' (ngSubmit)="onSubmit(myForm)">
+
+      <ion-item>
+        <ion-label fixed>Adınız:</ion-label>
+        <ion-input type="text" [(ngModel)]="name" name="name" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Soyadınız:</ion-label>
+        <ion-input type="text" [(ngModel)]="surname" name="surname" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          Aracınızın cinsi:
+        </ion-label>
+        <ion-select [(ngModel)]="selectedCarTypes" name="selectedCarTypes" multiple="true" cancelText="Nah" okText="Okay!">
+          <ion-option value="motor">motor</ion-option>
+          <ion-option value="otomobil">otomobil</ion-option>
+          <ion-option value="minibüs">minibüs</ion-option>
+          <ion-option value="otobüs">otobüs</ion-option>
+          <ion-option value="kamyon">kamyon</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <button ion-button block>
+        <ion-icon name="add"></ion-icon>
+        Add
+      </button>
+
+    </form>
+
+
+  </ion-list>
+</ion-content>

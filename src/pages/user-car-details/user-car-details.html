@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>user-car-details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <p text-center>Lütfen aracınızı ve plakanızı <br> <b> uygun formatta </b> giriniz.</p>
+
+
+  <ion-list>
+    <form #myForm='ngForm' (ngSubmit)="onSubmit(myForm)">
+      <ion-item>
+        <ion-label>
+          Aracınızın cinsi:
+        </ion-label>
+        <ion-select [(ngModel)]="selectedCarTypes" (ionChange)="selectedCarType(selectedCarTypes)"
+                    name="selectedCarTypes" cancelText="Nah"
+                    okText="Okay!">
+          <ion-option value="motor">motor</ion-option>
+          <ion-option value="otomobil">otomobil</ion-option>
+          <ion-option value="minibüs">minibüs</ion-option>
+          <ion-option value="otobüs">otobüs</ion-option>
+          <ion-option value="kamyon">kamyon</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Plakanız:</ion-label>
+        <ion-input type="text" [(ngModel)]="plate" name="plate" placeholder="34AA1234" ng-pattern="/[a-zA-Z0-9^ ]/"
+                   required></ion-input>
+      </ion-item>
+      <button padding="" ion-button block>
+        <ion-icon name="add"></ion-icon>
+        Kaydet
+      </button>
+
+    </form>
+
+
+  </ion-list>
+</ion-content>

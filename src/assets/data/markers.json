@@ -1,0 +1,69 @@
+[
+  {
+    "capasity": 14,
+    "kamyon": 200,
+    "latitude": 40.985564,
+    "longitude": 28.716391,
+    "minibus": 100,
+    "motor": 25,
+    "name": "Kålgårdens rastgård",
+    "otobus": 150,
+    "otomobil": 50,
+    "parkqr": "anlikotopark-park1",
+    "title": "aaaa"
+  },
+  {
+    "capasity": 3,
+    "kamyon": 99,
+    "latitude": 40.979182,
+    "longitude": 28.713129,
+    "minibus": 69,
+    "motor": 59,
+    "name": "Öxnegården",
+    "otobus": 79,
+    "otomobil": 89,
+    "parkqr": "anlikotopark-park2",
+    "title": "hmmmm"
+  },
+  {
+    "capasity": 55,
+    "kamyon": 455,
+    "latitude": 40.977011,
+    "longitude": 28.729523,
+    "minibus": 155,
+    "motor": 55,
+    "name": "Öxnegården",
+    "otobus": 255,
+    "otomobil": 355,
+    "parkqr": "anlikotopark-park3",
+    "title": "hmmmm"
+  },
+  {
+    "capasity": 15,
+    "kamyon": 55,
+    "latitude": 40.975488,
+    "longitude": 28.719137,
+    "minibus": 35,
+    "motor": 15,
+    "name": "Öxnegården",
+    "otobus": 25,
+    "otomobil": 45,
+    "parkqr": "anlikotopark-park4",
+    "title": "hmmmm"
+  },
+  {
+    "capasity": 26,
+    "kamyon": 59,
+    "latitude": 40.993177,
+    "longitude": 28.709095,
+    "minibus": 99,
+    "motor": 19,
+    "name": "Öxnegården",
+    "otobus": 89,
+    "otomobil": 49,
+    "parkqr": "anlikotopark-park5",
+    "title": "hmmmm"
+  }
+]
+
+

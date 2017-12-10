@@ -1,0 +1,45 @@
+<ion-content padding class="background">
+  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+
+    <div class="row responsive-md ">
+      <div class="col col-50 col-offset-25">
+        <!---->
+
+        <ion-item>
+          <ion-input #email formControlName="email" type="email" placeholder="email address"
+                     [class.invalid]="!loginForm.controls.email.valid &&
+          loginForm.controls.email.dirty"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-input #password formControlName="password" type="password" placeholder="password"
+                     [class.invalid]="!loginForm.controls.password.valid &&
+          loginForm.controls.password.dirty"></ion-input>
+        </ion-item>
+
+        <div class="buttonGroup">
+          <button ion-button block type="submit" color="color1">
+            Login
+          </button>
+          <button icon-left ion-button block color="facebook" (click)="loginWithFacebook()">
+            <ion-icon name="logo-facebook"></ion-icon>
+            Login with Facebook
+          </button>
+
+        </div>
+      </div>
+    </div>
+    <div class="buttonsfooter">
+      <a (click)="goToResetPassword()">
+        <h6>FORGOT PASSWORD? <b> GET NEW!</b></h6>
+      </a>
+    </div>
+    <div margin-top="5px">
+      <a (click)="createAccount()">
+        <h6>DON'T HAVE AN ACCOUNT? <b>SIGN UP!</b></h6>
+      </a>
+    </div>
+  </form>
+
+</ion-content>

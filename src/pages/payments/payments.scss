@@ -1,0 +1,17 @@
+page-payments {
+  .color-response-info {
+    color: #FC4349;
+    text-align: center;
+  }
+  .boxContainer {
+    display: table;
+    width: 100%;
+    height: 30%;
+  }
+  .box {
+    background: #FC4349;
+    display: table-cell;
+    text-align: center;
+    vertical-align: bottom;
+  }
+}

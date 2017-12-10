@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>payments</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label color="color1">
+      Tarih Seçiniz:
+    </ion-label>
+    <ion-select [(ngModel)]="selectedYears" name="selectedYears" (ngModelChange)="getSelectedYears(selectedYears)">
+      <ion-option *ngFor="let years of years" [value]="years.value">{{ years.value }}</ion-option>
+    </ion-select>
+    <ion-select [(ngModel)]="selectedMonths" name="selectedMonths"
+                (ngModelChange)="getSelectedMonths(selectedMonths)">
+      <ion-option *ngFor="let month of months" [value]="month.key">{{ month.value }}</ion-option>
+    </ion-select>
+  </ion-item>
+  <button ion-button outline block color="color1" (click)="getPayments()">Ara</button>
+
+  <div padding>
+    <ion-segment [(ngModel)]="selectedSegment">
+      <ion-segment-button value="daily">
+        Günlük Ödemeler
+      </ion-segment-button>
+      <ion-segment-button value="subs">
+        Abonelik Ödemeleri
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="selectedSegment">
+    <div [hidden]="(ifChangeDate == false)">
+      <ion-list *ngSwitchCase="'subs'">
+        <ion-card>
+          <ion-list *ngFor="let data of subscriptionArchive" (click)="selectedSubscriptionDetails(data)">
+            <button ion-item>
+              <ion-icon name="car" item-start></ion-icon>
+              {{data.subPark}}
+            </button>
+
+          </ion-list>
+        </ion-card>
+        <h3 class="color-response-info" padding-top [hidden]="(noSubscriptionResponse == false)">
+          Abonelik ödemesi bulunamadı.
+        </h3>
+      </ion-list>
+
+      <ion-list *ngSwitchCase="'daily'">
+        <ion-card>
+          <ion-list *ngFor="let data of dailyArchive" (click)="selectedDailyArchiveDetails(data)">
+            <button ion-item>
+              <ion-icon name="car" item-start></ion-icon>
+              {{data.otoparkName}}
+            </button>
+          </ion-list>
+        </ion-card>
+
+        <h3 class="color-response-info" [hidden]="(noDailyResponse == false)">
+          Günlük ödeme bulunamadı.
+        </h3>
+
+      </ion-list>
+    </div>
+  </div>
+
+</ion-content>

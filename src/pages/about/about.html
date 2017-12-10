@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-navbar color="color5">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>About Page</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+
+  <div class="boxContainer" padding-top="">
+    <div class="box">
+      <ion-grid text-center>
+        <ion-row>
+          <ion-col width-33>
+            <p class="walletTextParag">Cüzdanınız:</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col width-33>
+            <h1 class="walletText">{{ (userProfileData | async)?.wallet | number}} ₺</h1>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col width-50>
+            <button class="walletButton" ion-button="" icon-left color="color1" (click)="rotatePaymentsPage()">
+              <ion-icon name="ios-calendar"></ion-icon>
+              Ödeme geçmişi
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <div padding-horizontal="">
+    <p [hidden]="checked == true" *ngIf="userActivityActive===false" text-center>Kayıtlı aracınızla giriş yapmak
+      üzeresiniz.</p>
+    <br>
+    <ion-item *ngIf="userActivityActive===false">
+      <ion-label>Farklı bir araç ile giriş yap.</ion-label>
+      <ion-toggle [(ngModel)]="checked" (ionChange)="defaultCarChecked(checked)"></ion-toggle>
+    </ion-item>
+
+
+    <div [hidden]="checked == false" *ngIf="userActivityActive===false">
+      <form #myForm='ngForm' (ngSubmit)="intoParkingWithDifferentCar(myForm)">
+        <ion-item>
+          <ion-label>
+            Aracınızın cinsi:
+          </ion-label>
+          <ion-select [(ngModel)]="selectedCarTypes"
+                      name="selectedCarTypes" cancelText="Nah"
+                      okText="Okay!">
+            <ion-option value="motor">motor</ion-option>
+            <ion-option value="otomobil">otomobil</ion-option>
+            <ion-option value="minibus">minibüs</ion-option>
+            <ion-option value="otobus">otobüs</ion-option>
+            <ion-option value="kamyon">kamyon</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>Plakanız:</ion-label>
+          <ion-input type="text" [(ngModel)]="plate" name="plate" placeholder="34AA1234" ng-pattern="/[a-zA-Z0-9^ ]/"
+                     required></ion-input>
+        </ion-item>
+        <button ion-button block icon-left="" color="color1" class="buttonOdemeyap">
+          <ion-icon name="ios-card"></ion-icon>
+          Otopark girişi
+        </button>
+      </form>
+    </div>
+
+    <div *ngIf="userActivityActive===true">
+      <ion-card>
+        <ion-card-content>
+          otoparkta bulunduğunuz süre: {{rangeAsHours}} saat.
+          anlık ödeyeceğiniz ücret: {{userPayment}}
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <button ion-button block icon-left="" color="color1" class="buttonOdemeyap" [hidden]="checked == true"
+            (click)="intoParkingWithDefaultCar()" *ngIf="userActivityActive===false">
+      <ion-icon name="ios-card"></ion-icon>
+      Otopark girişi
+    </button>
+    <button ion-button block icon-left="" color="color1" class="buttonOdemeyap" *ngIf="userActivityActive===true"
+            (click)="outParking()">
+      <ion-icon name="ios-card"></ion-icon>
+      Ödeme ve çıkış yap
+    </button>
+  </div>
+
+
+</ion-content>

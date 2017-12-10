@@ -1,0 +1,53 @@
+page-payment-success {
+
+  .imageTick {
+    width: 30%;
+    padding-top: 20%;
+  }
+  .odemeSayfasiP {
+    font-size: 15px;
+    margin-top: -2%;
+  }
+  .paymentsInfo {
+    margin-top: 10%;
+    margin-bottom: 30%;
+  }
+
+  .gridPoll {
+    margin-top: 12%;
+    margin-bottom: -8%;
+  }
+
+  ul {
+    padding: 0px;
+
+    &.rating li {
+      padding: 3px 8px !important;
+      background: none;
+      color: #FC4349;
+
+      ion-icon {
+        font-size: 30px;
+      }
+    }
+  }
+
+  .container {
+    position: absolute;
+    bottom: 3%;
+    margin-right: 10%;
+    margin-left: 10%;
+    left: 0px;
+    right: 0px;
+  }
+
+  .largerIcon {
+    font-size: 25px;
+  }
+
+  .thanks-vote-text{
+    text-align: center;
+    color: #FC4349;
+  }
+
+}

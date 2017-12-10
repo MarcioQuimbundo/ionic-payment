@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{data.subPark}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card color="color2">
+    <ion-card-content>
+      <p class="profile-infos">Abonelik Durumu: <b>{{status}}</b></p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <p class="profile-infos">Otopark: <b>{{ data.subPark}}</b></p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <p class="profile-infos">İlçe: <b>{{ data.subCity}}</b></p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <p class="profile-infos">Ödemeniz: <b>{{ data.subPayment | number}} ₺</b></p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <p class="profile-infos">Başlangıç: <b>{{ data.userSubscriptionStartTime}}</b></p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <p class="profile-infos">Bitiş: <b>{{ data.userSubscriptionEndTime}}</b></p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card color="color1">
+    <ion-card-content>
+      <p class="profile-infos">Kalan Gün: <b>{{ leftDay}}</b></p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

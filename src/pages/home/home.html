@@ -1,0 +1,26 @@
+<ion-header no-border>
+  <ion-navbar transparent color="color5">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div #map id="map">
+
+  </div>
+
+  <div class="container">
+    <button ion-button icon-only color="color1" clear large (click)="displayMap()">
+      <ion-icon name="ios-locate-outline"></ion-icon>
+    </button>
+  </div>
+  <div class="container2">
+    <button ion-button icon-only color="color2" clear large (click)="rotateDetailsPage()">
+      <ion-icon name="ios-cash"></ion-icon>
+    </button>
+  </div>
+
+</ion-content>
